@@ -1,0 +1,19 @@
+{
+  "name": "labs_23_06",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juli11V/Labs_23_06.git"
+  },
+  "author": "Yulia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Juli11V/Labs_23_06/issues"
+  },
+  "homepage": "https://github.com/Juli11V/Labs_23_06#readme"
+}
