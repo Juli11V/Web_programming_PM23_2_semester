@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<%- include('../blocks/head.ejs'); %>
+
+<body class="bg-dark text-light text-center">
+
+<%- include('../blocks/header.ejs'); %>
+
+<!-- Логотип університету -->
+<div class="container d-flex justify-content-center my-5">
+    <img src="/web_application/frontend/img/logo.png" class="img-fluid">
+</div>
+
+<!-- Текст сторінки -->
+<h1 class="text-primary">Програмування web-додатків</h1>
+<h4>Автор: Демчук Юлія</h4>
+<h4 class="text-success mb-3"
+    data-bs-toggle="collapse"
+    href="#task"
+    role="button"
+    aria-expanded="false"
+    aria-controls="task">Варіант №1</h4>
+<!-- Блок із завданням -->
+<div class="collapse" id="task">
+    <div class="container-fluid bg-dark border-top border-secondary">
+        <div class="row my-3">
+            <!-- Лівий блок -->
+            <div class="col-12 col-md-6">
+                <div class="container-flex">
+                    <p class="text-success fs-4 mx-5">Реалізувати з допомогою прототипів або класів такі інформаційні об’єкти:</p>
+                    <div class="d-inline-block">
+                        <ul class="text-start fs-5">
+                            <li>Пасажир</li>
+                            <li>Квиток</li>
+                            <li>Потяг</li>
+                            <li>Продані квитки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Правий блок -->
+            <div class="col-12 col-md-6">
+                <div class="container-flex">
+                    <p class="text-success fs-4 mx-5">Реалізувати такі можливості системи:</p>
+                    <div class="d-inline-block">
+                        <ul class="text-start fs-5">
+                            <li>Додавання нового пасажира в колекцію</li>
+                            <li>Редагування пасажира в колекції</li>
+                            <li>Видалення пасажира з колекції</li>
+                            <li>Пошук одного пасажира в колекції</li>
+                            <br>
+                            <li>Додавання потяга в колекцію</li>
+                            <li>Редагування потяга в колекції</li>
+                            <li>Видалення потяга з колекції</li>
+                            <li>Пошук одного потяга в колекції</li>
+                            <br>
+                            <li>Покупка пасажиром квитка на потяг</li>
+                            <li>Зміна квитка із одного потяга на інший</li>
+                            <li>Скасування покупки квитка</li>
+                            <li>Пошук потяга на який продали найбільше та найменше квитків</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../blocks/scripts.ejs'); %>
+</body>

@@ -1,0 +1,29 @@
+/* Стилі для кнопок керування даними */
+.btn-control {
+   cursor: pointer;
+}
+
+/* Стилі для кнопок керування даними при наведенні */
+.btn-control:hover {
+   color:#0d6efd;
+   transition: color 0.3s;
+}
+
+/* Задання ширини стовпців таблиці за вмістом елементів */
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+/* Налаштування поведінки числового поля вводу */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Налаштування поведінки числового поля вводу для браузера Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
