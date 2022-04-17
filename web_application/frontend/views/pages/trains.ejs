@@ -3,12 +3,56 @@
 
 <%- include('../blocks/head.ejs'); %>
 
-<body class="bg-dark text-light text-center">
+<body class="bg-dark text-light">
 
+<!-- Підключення шапки сайту -->
 <%- include('../blocks/header.ejs'); %>
 
-<h1 class="mt-4">Потяги</h1>
+<!-- Підключення блоку керування -->
+<%- include('../blocks/control.ejs'); %>
 
+<!-- Додавання таблиці -->
+<div class="mx-3 table-responsive">
+    <table class="table table-dark table-striped table-hover table-bordered border-secondary align-middle">
+        <thead>
+        <tr class="text-center text-primary align-middle">
+            <th class="fit" scope="col">#</th>
+            <th class="" scope="col">Назва потяга</th>
+            <th class="" scope="col">Напрям потяга</th>
+            <th class="fit" scope="col">. . .</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td> <span class="m-3">1</span> </td>
+            <td>Потяг 1</td>
+            <td>Львів-Одеса</td>
+            <td> <%- include('../blocks/icons.ejs') %> </td>
+        </tr>
+        <tr>
+            <td> <span class="m-3">2</span> </td>
+            <td>Потяг 2</td>
+            <td>Дніпро-Київ</td>
+            <td> <%- include('../blocks/icons.ejs') %> </td>
+        </tr>
+        <tr>
+            <td>  <span class="m-3">...</span> </td>
+            <td>-</td>
+            <td>-</td>
+            <td> <%- include('../blocks/icons.ejs') %> </td>
+        </tr>
+        <tr>
+            <td> <span class="m-3">6</span> </td>
+            <td>Потяг 3</td>
+            <td>Київ-Львів</td>
+            <td> <%- include('../blocks/icons.ejs') %> </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Підключення скриптів -->
 <%- include('../blocks/scripts.ejs'); %>
 
 </body>

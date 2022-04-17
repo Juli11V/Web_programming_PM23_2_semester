@@ -47,22 +47,22 @@ exp.get(["/", "/index"], function (request, response) {
 
 // ... для сторінки "Потяги"
 exp.get("/trains", function (request, response) {
-    response.render("pages/trains", { title: "Потяги",page_id: "1" })
+    response.render("pages/trains", { title: "Потяги", add_button:"Додати нового потяга", page_id: "1" })
 });
 
 // ... для сторінки "Пасажири"
 exp.get("/passengers", function (request, response) {
-    response.render("pages/passengers", { title: "Пасажири",page_id: "2" })
+    response.render("pages/passengers", { title: "Пасажири",add_button:"Знайти пасажира",page_id: "2" })
 });
 
 // ... для сторінки "Квитки"
 exp.get("/tickets", function (request, response) {
-    response.render("pages/tickets", { title: "Квитки",page_id: "3" })
+    response.render("pages/tickets", { title: "Квитки",add_button:"Шукати квиток", page_id: "3" })
 });
 
 // ... для сторінки "Продані квитки"
 exp.get("/ticketsSold", function (request, response) {
-    response.render("pages/ticketsSold", { title: "Продані квитки",page_id: "4" })
+    response.render("pages/ticketsSold", { title: "Продані квитки",add_button:"Список проданих квитків",page_id: "4" })
 });
 
 // ... для сторінки 404 - "Сторінку не знайдено"
