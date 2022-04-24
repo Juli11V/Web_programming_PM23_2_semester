@@ -14,7 +14,11 @@ const path = require("path");
 const exp = express();
 
 // Порт доступу до локального сервера
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.npm_package_config_port_frontend || 8080;
+
+// Допоміжні константи
+const USE_DB = process.argv[2] === "use_db=true" ? true : false;
+const SERVER_PORT = process.env.npm_package_config_port_backend || 3000;
 
 // Шлях до директорії проекту
 const dir_proj = path.join(__dirname, "/../../");
@@ -41,42 +45,64 @@ exp.set("views", dir_views);
 // Налаштовуємо маршрутизацію
 
 // ... для головної сторінки
-exp.get(["/", "/index"], function (request, response) {
-    response.render("pages/index", { title: "Головна сторінка", page_id: "0" })
+exp.get(["/", "/index"], (req, res) => {
+    res.render("pages/index", { title: "Головна сторінка",
+        use_db: USE_DB,
+        server_port: SERVER_PORT,
+        page_id: "0" });
 });
 
-// ... для сторінки "Потяги"
-exp.get("/trains", function (request, response) {
-    response.render("pages/trains", { title: "Потяги", add_button:"Додати нового потяга", page_id: "1" })
+// ... для сторінки "Поїзди"
+exp.get("/trains", (req, res) => {
+    res.render("pages/trains", { title: "Поїзди",
+        use_db: USE_DB,
+        server_port: SERVER_PORT,
+        add_button: "Додати новий поїзд",
+        page_id: "1" });
 });
 
 // ... для сторінки "Пасажири"
-exp.get("/passengers", function (request, response) {
-    response.render("pages/passengers", { title: "Пасажири",add_button:"Знайти пасажира",page_id: "2" })
+exp.get("/passengers", (req, res) => {
+    res.render("pages/passengers", { title: "Пасажири",
+        use_db: USE_DB,
+        server_port: SERVER_PORT,
+        add_button: "Додати нового пасажира",
+        page_id: "2" });
 });
 
 // ... для сторінки "Квитки"
-exp.get("/tickets", function (request, response) {
-    response.render("pages/tickets", { title: "Квитки",add_button:"Шукати квиток", page_id: "3" })
+exp.get("/tickets", (req, res) => {
+    res.render("pages/tickets", { title: "Квитки",
+        use_db: USE_DB,
+        server_port: SERVER_PORT,
+        add_button: "Додати новий квиток",
+        page_id: "3" });
 });
 
 // ... для сторінки "Продані квитки"
-exp.get("/ticketsSold", function (request, response) {
-    response.render("pages/ticketsSold", { title: "Продані квитки",add_button:"Список проданих квитків",page_id: "4" })
+exp.get("/ticketsSold", (req, res) => {
+    res.render("pages/ticketsSold", { title: "Продані квитки",
+        use_db: USE_DB,
+        server_port: SERVER_PORT,
+        add_button: "Очистити дані",
+        page_id: "4" });
 });
 
-// ... для сторінки 404 - "Сторінку не знайдено"
-exp.use(function (request, response) {
-    response.status(404);
-    response.render("pages/404", { title: "Error 404",
+// ... для помилкової сторінки - "Сторінку не знайдено"
+exp.use((req, res) => {
+    res.status(404);
+    res.render("pages/404", { title: "Error 404",
+        use_db: USE_DB,
+        server_port: SERVER_PORT,
         page_id: "-1",
-        path: request.path });
+        path: req.path });
 });
+
 // ...............................................................................................
 
 // Запускаємо локальний сервер
 exp.listen(PORT);
 
 // Виводимо інформаційне повідомлення
-console.log(`Server is started on ${PORT} port`);
+console.log(`Frontend server is started on ${PORT} port`);
 console.log(`Url: http://localhost:${PORT}`);

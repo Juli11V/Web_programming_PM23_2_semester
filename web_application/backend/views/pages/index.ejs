@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Задаємо кодування сторінки -->
+   <meta charset="UTF-8">
+
+   <!-- Задаємо заголовок сторінки -->
+   <title><%= title %></title>
+
+   <!-- Задаємо опис сторінки -->
+   <meta name="description" content="Програмування веб-додатків">
+
+   <!-- Задаємо viewport -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Підключення Bootstrap CSS -->
+   <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+   <!-- Підключення власних стилів -->
+   <link rel="stylesheet" href="/web_application/frontend/css/styles.css">
+   <link rel="stylesheet" href="/web_application/frontend/css/scrollbar.css">
+
+</head>
+
+<body class="bg-light text-dark mx-3 my-2">
+
+   <div class="fs-3 text-primary">Ви підключилися до локального сервера</div>
+   <div class="fs-5">http://localhost: <%- port %></div>
+   <hr>
+   <div class="fs-3 text-primary mb-2">Список доступних запитів:</div>
+
+   <%- include('../blocks/table.ejs'); %>
+
+</body>
+</html>
