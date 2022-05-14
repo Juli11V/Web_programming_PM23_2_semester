@@ -12,48 +12,17 @@
 <%- include('../blocks/control.ejs'); %>
 
 <!-- Додавання таблиці -->
-<div class="mx-3 table-responsive">
-    <table class="table table-dark table-striped table-hover table-bordered border-secondary align-middle">
-        <thead>
-        <tr class="text-center text-primary align-middle">
-            <th class="fit" scope="col">#</th>
-            <th class="" scope="col">Назва потяга</th>
-            <th class="" scope="col">Напрям потяга</th>
-            <th class="fit" scope="col">. . .</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td> <span class="m-3">1</span> </td>
-            <td>Потяг 1</td>
-            <td>Львів-Одеса</td>
-            <td> <%- include('../blocks/icons.ejs') %> </td>
-        </tr>
-        <tr>
-            <td> <span class="m-3">2</span> </td>
-            <td>Потяг 2</td>
-            <td>Дніпро-Київ</td>
-            <td> <%- include('../blocks/icons.ejs') %> </td>
-        </tr>
-        <tr>
-            <td>  <span class="m-3">...</span> </td>
-            <td>-</td>
-            <td>-</td>
-            <td> <%- include('../blocks/icons.ejs') %> </td>
-        </tr>
-        <tr>
-            <td> <span class="m-3">6</span> </td>
-            <td>Потяг 3</td>
-            <td>Київ-Львів</td>
-            <td> <%- include('../blocks/icons.ejs') %> </td>
-        </tr>
-        </tbody>
-    </table>
+<%- include('../blocks/table_start.ejs'); %>
+<%- include('../blocks/table_head_trains.ejs'); %>
+<%- include('../blocks/table_end.ejs'); %>
 
-</div>
+<!-- Підключення модальних вікон -->
+<%- include('../blocks/modal_confirm.ejs'); %>
+<%- include('../blocks/modal_add_trains.ejs'); %>
 
 <!-- Підключення скриптів -->
 <%- include('../blocks/scripts.ejs'); %>
 
 </body>
 
+</html>

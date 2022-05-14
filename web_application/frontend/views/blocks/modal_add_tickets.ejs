@@ -1,0 +1,70 @@
+<!-- Модальне вікно -->
+<div class="modal fade" id="modal_tickets" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+
+            <!-- Заголовок модального вікна -->
+            <div class="modal-header border-secondary">
+                <div class="d-flex flex-column">
+                    <span class="fs-3 lh-1" id="ticket_title">#Title</span>
+                </div>
+                <button type="button" class="btn-close bg-primary" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Тіло модального вікна -->
+            <div class="modal-body">
+                <form>
+
+                    <!-- номер місця у вагоні -->
+                    <span class="fs-5">№ місця</span>
+                    <input class="form-control fs-5 bg-dark text-light border-primary mb-2" id="ticket_place" type="number"
+                           placeholder="№">
+
+                    <div class="row gx-3 mb-2">
+                        <div class="col-12 col-sm-2">
+
+                            <!-- номер вагону -->
+                            <span class="fs-5">№ вагону</span>
+                            <input class="form-control fs-5 bg-dark text-light border-primary mb-2" id="ticket_vagon" type="number"
+                                   placeholder="№" >
+                        </div>
+
+                        <div class="col-12 mb-2 d-block d-sm-none"></div>
+                        <div class="col-12 col-sm-10">
+
+                            <!-- пасажир-->
+                            <span class="fs-5">Пасажир</span>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary fs-5 w-80 dropdown-toggle" type="button" id="ticket_passengers_list"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Виберіть пасажира</button>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="set_passenger" id="ticket_passengers_list">
+                                    <li><span class="dropdown-item" onclick="set_passenger(this)">. . .</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- поїзд-->
+                    <span class="fs-5">Поїзд</span>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-primary fs-5 w-100 dropdown-toggle" type="button" id="ticket_train"
+                                data-bs-toggle="dropdown" aria-expanded="false">Виберіть поїзд</button>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="ticket_train" id="ticket_trains_list">
+                            <li><span class="dropdown-item" onclick="set_train(this)">. . .</span></li>
+                        </ul>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Кнопки модального вікна -->
+            <div class="modal-footer border-secondary">
+                <button class="btn btn-outline-primary" id="ticket_yes" data-bs-dismiss="modal"
+                        onclick="modal_add_tickets()">#Yes</button>
+                <button class="btn btn-outline-secondary" id="ticket_no" data-bs-dismiss="modal">Відміна</button>
+            </div>
+        </div>
+    </div>
+</div>

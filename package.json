@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "frontend": "nodemon web_application/frontend/main.js -e js,ejs",
-    "backend": "nodemon web_application/backend/main.js  -e js,ejs"
+  "config": {
+    "port_frontend": "8080",
+    "port_backend": "3000"
   },
-  "dependencies": {},
+ "scripts": {
+    "frontend": "nodemon web_application/frontend/main.js use_db=false -e js,ejs",
+    "frontend_db": "nodemon web_application/frontend/main.js use_db=true -e js,ejs",
+    "backend": "nodemon web_application/backend/main.js -e js"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.9.2"
+  },
   "devDependencies": {
     "bootstrap": "^5.0.0-beta3",
     "cors": "^2.8.5",

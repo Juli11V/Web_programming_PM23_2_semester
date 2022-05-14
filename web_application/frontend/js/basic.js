@@ -527,8 +527,8 @@ function get_icon_code (only_delete) {
 function set_number (element) {
 
     let value = $(element).val();
-    value = value.substring(0, 10);
-
+    value = value.substring(0, 3);
+    value = (value > 120) ? 120 : value;
     $(element).val(value);
 
 }

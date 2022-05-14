@@ -1,0 +1,39 @@
+<!-- Модальне вікно -->
+<div class="modal fade" id="modal_trains" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+
+            <!-- Заголовок модального вікна -->
+            <div class="modal-header border-secondary">
+                <div class="d-flex flex-column">
+                    <span class="fs-3 lh-1" id="train_title">#Title</span>
+                </div>
+                <button type="button" class="btn-close bg-primary" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Тіло модального вікна -->
+            <div class="modal-body">
+                <form>
+
+                    <!-- Назва поїзда-->
+                    <span class="fs-5">Назва поїзда</span>
+                    <input class="form-control fs-5 bg-dark text-light border-primary mb-2" id="train_name" type="text"
+                           placeholder="Назва поїзда">
+
+                    <!-- маршрут -->
+                    <span class="fs-5">Маршрут поїзда</span>
+                    <input class="form-control fs-5 bg-dark text-light border-primary" id="train_address" type="text"
+                           placeholder="Маршрут">
+                </form>
+            </div>
+
+            <!-- Кнопки модального вікна -->
+            <div class="modal-footer border-secondary">
+                <button class="btn btn-outline-primary" data-bs-dismiss="modal" onclick="modal_add_trains()"
+                        id="train_yes">#Yes</button>
+                <button class="btn btn-outline-secondary" data-bs-dismiss="modal" id="train_no">Відміна</button>
+            </div>
+        </div>
+    </div>
+</div>

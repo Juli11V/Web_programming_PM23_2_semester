@@ -1,0 +1,28 @@
+<!-- Модальне вікно -->
+<div class="modal fade" id="modal_confirm" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+
+            <!-- Заголовок модального вікна -->
+            <div class="modal-header border-secondary">
+                <div class="d-flex flex-column">
+                    <span class="fs-3 lh-1" id="modal_confirm_title">#Title</span>
+                </div>
+                <button type="button" class="btn-close bg-primary" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Повідомлення модального вікна -->
+            <div class="modal-body">
+                <span class="fs-5 lh-1" id="modal_confirm_message">#Body</span>
+            </div>
+
+            <!-- Кнопки модального вікна -->
+            <div class="modal-footer border-secondary">
+                <button class="btn btn-outline-primary" id="modal_confirm_yes" data-bs-dismiss="modal"
+                        onclick="modal_confirm()">#Yes</button>
+                <button class="btn btn-outline-secondary" id="modal_confirm_no" data-bs-dismiss="modal">#No</button>
+            </div>
+        </div>
+    </div>
+</div>

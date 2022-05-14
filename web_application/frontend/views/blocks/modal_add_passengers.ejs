@@ -1,0 +1,58 @@
+<!-- Модальне вікно -->
+<div class="modal fade" id="modal_passengers" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark">
+
+            <!-- Заголовок модального вікна -->
+            <div class="modal-header border-secondary">
+                <div class="d-flex flex-column">
+                    <span class="fs-3 lh-1" id="passenger_title">#Title</span>
+                </div>
+                <button type="button" class="btn-close bg-primary" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Тіло модального вікна -->
+            <div class="modal-body">
+                <form>
+
+                    <!-- Прізвище, ім’я, по батькові -->
+                    <span class="fs-5">Прізвище, ім’я, по батькові</span>
+                    <input class="form-control fs-5 bg-dark text-light border-primary mb-2" id="passenger_name" type="text"
+                           placeholder="П.І.Б.">
+
+                    <div class="row gx-3">
+                        <div class="col-12 col-sm-10">
+                            <!--Вік пасажира -->
+                            <span class="fs-5">Вік</span>
+                            <input class="form-control fs-5 bg-dark text-light border-primary" id="passenger_age" type="number"
+                                   placeholder="Вік" oninput="set_number(this)">
+                        </div>
+
+                        <div class="col-12 mb-2 d-block d-sm-none"></div>
+                        <div class="col-12 col-sm-10">
+
+                            <!-- Поїзд -->
+                            <span class="fs-5">Поїзд</span>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-primary fs-5 w-100 dropdown-toggle" type="button" id="passenger_train"
+                                        data-bs-toggle="dropdown" aria-expanded="false">Виберіть поїзд</button>
+                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="passenger_train"
+                                    id="passenger_trains_list">
+                                    <li><span class="dropdown-item" onclick="set_train(this)">. . .</span></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Кнопки модального вікна -->
+            <div class="modal-footer border-secondary">
+                <button class="btn btn-outline-primary" id="passenger_yes" data-bs-dismiss="modal"
+                        onclick="modal_add_passengers()">#Yes</button>
+                <button class="btn btn-outline-secondary" id="passenger_no" data-bs-dismiss="modal">Відміна</button>
+            </div>
+        </div>
+    </div>
+</div>
